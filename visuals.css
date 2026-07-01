@@ -1,0 +1,94 @@
+/* TaskTape Visual Upgrades CSS */
+
+/* 11. Spinning Spools (Pseudo-elements over cassettes) */
+.cassette-spool {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px dashed #333;
+  border-radius: 50%;
+  top: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.cassette-spool.left { left: 25%; }
+.cassette-spool.right { right: 25%; }
+.spinning .cassette-spool {
+  opacity: 1;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* 12. Tape Ribbon Dragging */
+.tape-ribbon {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #111;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 2px;
+}
+
+/* 15. Worn-Out Textures (Scratches Overlay) */
+.scratch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.3"/></svg>');
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
+
+/* 17. Polaroid Task Thumbnails (Targeting the day photo) */
+[data-testid="img-day-photo"], .day-photo, img[src^="blob:"] {
+  background: white;
+  padding: 10px 10px 40px 10px !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4) !important;
+  border: 1px solid #ddd !important;
+  transform: rotate(-3deg);
+  border-radius: 2px !important;
+  filter: sepia(0.3) contrast(1.2);
+  margin-top: 10px;
+}
+
+/* 18. Sticker Bombing */
+.sticker {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: grab;
+  z-index: 9000;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+  transition: transform 0.1s;
+}
+.sticker:active { cursor: grabbing; transform: scale(1.1); }
+#sticker-drawer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #222;
+  border: 2px solid #555;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+  border-radius: 8px;
+}
+
+/* 19. Walkman Player UI Removed to restore original clean aesthetic */
+
+/* 20. Cassette Case Unfolding */
+[data-testid="cassette-popup"] {
+  transform-origin: left center;
+  animation: unfold 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes unfold {
+  0% { transform: perspective(800px) rotateY(-90deg); opacity: 0; }
+  100% { transform: perspective(800px) rotateY(0deg); opacity: 1; }
+}
