@@ -57,77 +57,7 @@
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 
-/* 24. Encore Banner */
-#encore-banner {
-  position: fixed;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff0055;
-  color: white;
-  padding: 20px 60px;
-  font-size: 40px;
-  font-family: 'Instrument Serif', serif;
-  border: 6px solid #fff;
-  z-index: 10001;
-  transition: top 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border-radius: 8px;
-}
-#encore-banner.show { top: 40px; }
-
 /* 27. Unlockable Cassettes */
 .cassette-shell-neon { filter: hue-rotate(90deg) saturate(3) brightness(1.2); }
 .cassette-shell-gold { filter: sepia(1) saturate(4) hue-rotate(30deg) contrast(1.2); }
 
-/* 29. Writer's Block (Unified Theme) */
-#writers-block {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(248, 247, 255, 0.95);
-  backdrop-filter: blur(8px);
-  z-index: 20000;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #111;
-  text-align: center;
-  font-family: 'Instrument Serif', serif;
-}
-#writers-block.show { display: flex; }
-#writers-block h1 {
-  font-size: 80px;
-  color: #7c56d1;
-  margin: 0 0 10px 0;
-}
-#writers-block p {
-  font-size: 24px;
-  font-family: sans-serif;
-  color: #555;
-  margin: 0 0 40px 0;
-  max-width: 400px;
-  line-height: 1.5;
-}
-#wb-btn {
-  padding: 15px 40px;
-  font-size: 20px;
-  background: #7c56d1;
-  color: #fff;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  font-family: "ADLaM Display", cursive;
-  text-transform: uppercase;
-  transition: transform 0.1s, box-shadow 0.2s;
-  box-shadow: 0 10px 30px rgba(124, 86, 209, 0.3);
-}
-#wb-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(124, 86, 209, 0.4);
-}
-#wb-btn:active {
-  transform: scale(0.95);
-  box-shadow: 0 5px 15px rgba(124, 86, 209, 0.2);
-}

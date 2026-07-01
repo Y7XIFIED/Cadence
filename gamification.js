@@ -10,12 +10,6 @@ award.id = 'award-overlay';
 award.innerHTML = '<span>PLATINUM<br>RECORD!</span>';
 document.body.appendChild(award);
 
-// 24. Encore
-const encore = document.createElement('div');
-encore.id = 'encore-banner';
-encore.innerHTML = '🔥 ENCORE TIME! 🔥<br><span style="font-size:20px; font-family:sans-serif">You finished everything! Keep going!</span>';
-document.body.appendChild(encore);
-
 
 function updateShells() {
   document.querySelectorAll('[data-testid^="button-open-day"]').forEach(c => {
@@ -47,9 +41,6 @@ const gObserver = new MutationObserver(() => {
              if (allCbs.length > 0 && Array.from(allCbs).every(c => c.checked)) {
                award.classList.add('show');
                setTimeout(() => {
-                  award.classList.remove('show');
-                  encore.classList.add('show');
-                  setTimeout(() => encore.classList.remove('show'), 4000);
                }, 3000);
              }
           }, 100);
